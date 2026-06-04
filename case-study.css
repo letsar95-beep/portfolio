@@ -7,17 +7,20 @@
 
 @font-face {
   font-family: 'TT Interphases Pro Trl';
-  src: url('./Fonts/TT%20Interphases%20Pro%20Trial%20Regular.ttf') format('truetype');
+  src: url('./Fonts/TT%20Interphases%20Pro%20Trial%20Regular.woff2') format('woff2'),
+       url('./Fonts/TT%20Interphases%20Pro%20Trial%20Regular.ttf') format('truetype');
   font-weight: 400; font-style: normal; font-display: swap;
 }
 @font-face {
   font-family: 'TT Interphases Pro Trl';
-  src: url('./Fonts/TT%20Interphases%20Pro%20Trial%20Medium.ttf') format('truetype');
+  src: url('./Fonts/TT%20Interphases%20Pro%20Trial%20Medium.woff2') format('woff2'),
+       url('./Fonts/TT%20Interphases%20Pro%20Trial%20Medium.ttf') format('truetype');
   font-weight: 500; font-style: normal; font-display: swap;
 }
 @font-face {
   font-family: 'TT Interphases Pro Trl';
-  src: url('./Fonts/TT%20Interphases%20Pro%20Trial%20DemiBold.ttf') format('truetype');
+  src: url('./Fonts/TT%20Interphases%20Pro%20Trial%20DemiBold.woff2') format('woff2'),
+       url('./Fonts/TT%20Interphases%20Pro%20Trial%20DemiBold.ttf') format('truetype');
   font-weight: 600; font-style: normal; font-display: swap;
 }
 
