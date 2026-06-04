@@ -4,7 +4,7 @@ const sharp = require('sharp');
 
 const IMAGES = path.join(__dirname, 'images');
 const ORIG = path.join(IMAGES, 'originals');
-const QUALITY = 95;
+const QUALITY = 100;
 const exts = new Set(['.png', '.jpg', '.jpeg']);
 
 function walk(dir, files = []) {
@@ -33,7 +33,7 @@ function human(n) {
     const webpPath = path.join(IMAGES, rel).replace(/\.(png|jpe?g)$/i, '.webp');
 
     fs.mkdirSync(path.dirname(webpPath), { recursive: true });
-    await sharp(file).webp({ quality: QUALITY, effort: 6 }).toFile(webpPath);
+    await sharp(file).webp({ lossless: true, quality: QUALITY, effort: 6 }).toFile(webpPath);
     const after = fs.statSync(webpPath).size;
 
     totalBefore += before; totalAfter += after;
@@ -43,7 +43,7 @@ function human(n) {
   const pad = (s, n) => String(s).padEnd(n);
   const padL = (s, n) => String(s).padStart(n);
   const w = Math.max(...rows.map(r => r.rel.length), 9);
-  console.log('quality=' + QUALITY + ', effort=6\n');
+  console.log('lossless, effort=6\n');
   console.log(pad('Файл', w) + ' | ' + padL('До', 10) + ' | ' + padL('После', 10) + ' | ' + padL('Сжатие', 8));
   console.log('-'.repeat(w) + '-+-' + '-'.repeat(10) + '-+-' + '-'.repeat(10) + '-+-' + '-'.repeat(8));
   for (const r of rows.sort((a, b) => a.rel.localeCompare(b.rel))) {
