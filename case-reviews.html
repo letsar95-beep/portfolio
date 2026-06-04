@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Редизайн формы отзыва для Profi.ru</title>
+<link rel="stylesheet" href="./case-study.css" />
+</head>
+<body>
+<div class="page">
+
+  <a class="close-btn" href="./index.html">✕</a>
+
+  <header class="case-header">
+    <h1>Редизайн формы отзыва для&nbsp;Profi.ru</h1>
+    <p class="case-year">2026</p>
+    <div class="case-meta-row">
+      <span class="tag">Улучшение сценария</span>
+    </div>
+  </header>
+
+  <div class="hero">
+    <img src="./images/кейс%20Отзывы/первая%20кратинка%20в%20кейсе.png" alt="Форма отзыва Profi.ru — экраны" />
+  </div>
+
+  <div class="info-row even">
+    <div class="info-col">
+      <strong>Моя роль:</strong>
+      дизайн для проверки гипотезы
+    </div>
+    <div class="info-col">
+      <strong>Результат:</strong>
+      ожидается
+    </div>
+    <div class="info-col">
+      <strong>Команда:</strong>
+      продакт, аналитик, фронтенд- и&nbsp;бэкенд-разработчики, тестировщик
+    </div>
+  </div>
+
+  <hr class="divider mt-sm-40" />
+
+  <main>
+
+    <!-- Проблема и гипотеза -->
+    <div class="cards-row">
+      <div class="card">
+        <p class="card-label">Входящая проблема</p>
+        <p class="card-body">В&nbsp;отзывах недостаточно сравнительных характеристик, чтобы быстро выбрать специалиста. При&nbsp;этом отзывов с&nbsp;оценкой 5&nbsp;— большинство (97%): клиенты боятся обидеть специалиста и&nbsp;испортить ему репутацию на&nbsp;сервисе. В&nbsp;результате отзывы не&nbsp;помогают принимать решение о&nbsp;выборе.</p>
+      </div>
+      <div class="card">
+        <p class="card-label">Что хотели проверить</p>
+        <p class="card-body">Если вместо текстового поля дать пользователю упрощенный выбор из&nbsp;параметров, это поможет получить более содержательный фидбек без снижения конверсии.</p>
+      </div>
+    </div>
+
+    <!-- Форма до редизайна -->
+    <section class="section" style="margin-top:60px;">
+      <p class="sub-heading" style="margin-top:0;">Форма до редизайна</p>
+      <div class="figure" style="margin-top:30px; display:flex; gap:30px; flex-wrap:wrap;">
+        <img src="./images/кейс%20Отзывы/скриншот.png?v=2" alt="Форма отзыва до редизайна — пустое состояние" style="width:197px;" />
+        <img class="hide-sm" src="./images/кейс%20Отзывы/скриншот2.png?v=2" alt="Форма отзыва до редизайна — заполненная" style="width:197px;" />
+      </div>
+    </section>
+
+    <!-- Как я подошла к решению -->
+    <section class="section mt-sm-68">
+      <h2>Как я&nbsp;подошла к&nbsp;решению</h2>
+
+      <p class="sub-heading">Вариант 1&nbsp;— мягкий сбор критики в&nbsp;рамках оценки 5</p>
+      <div class="gallery full mt-sm-32">
+        <div class="media"><img src="./images/кейс%20Отзывы/Профи%20Отзывы%201%20вариант.png?v=2" alt="Вариант 1 — сбор критики при оценках 5, 4 и ниже" /></div>
+      </div>
+
+      <p class="body-text mt-sm-34" style="margin-top:50px;">На&nbsp;старте я&nbsp;ориентировалась на&nbsp;паттерн с&nbsp;динамическими чипсами в&nbsp;зависимости от&nbsp;оценки, но&nbsp;увидела риск: так как большинство ставят 5, негативные сигналы мы&nbsp;снова потеряем. Поэтому я&nbsp;добавила возможность давать критический фидбек при любой оценке, но&nbsp;подала его по-разному. Например, в&nbsp;оценке 5&nbsp;— я&nbsp;подала его не&nbsp;как «недостатки», а&nbsp;как предложение «что можно было бы улучшить?»&nbsp;— и&nbsp;сделала очевидным, что это не&nbsp;влияет на&nbsp;общую оценку.</p>
+      <p class="body-text" style="margin-top:20px;">Также я&nbsp;спроектировала логику сборки текстового отзыва из&nbsp;параметров формы, чтобы новые отзывы были однородными и&nbsp;читаемыми в&nbsp;ленте отзывов в&nbsp;анкетах спецов:</p>
+
+      <div class="gallery full mt-sm-34" style="margin-top:50px;">
+        <div class="media"><img src="./images/кейс%20Отзывы/Профи%20Отзывы%201%20вариант%20Текст.png?v=2" alt="Логика извлечения текста для публикации отзыва" /></div>
+      </div>
+
+      <p class="body-text mt-sm-26" style="margin-top:42px;">Проверка: сравниваем с&nbsp;текущей формой влияние на&nbsp;конверсию, качество сигнала и&nbsp;искренность фидбека.</p>
+
+      <p class="sub-heading mt-sm-84" style="margin-top:100px;">Вариант 2&nbsp;— пошаговая оценка по&nbsp;параметрам</p>
+      <div class="gallery full mt-sm-32">
+        <div class="media"><img src="./images/кейс%20Отзывы/Профи%20Отзывы%202%20вариант.png?v=2" alt="Вариант 2 — пошаговая оценка по параметрам" /></div>
+      </div>
+
+      <p class="body-text mt-sm-28" style="margin-top:44px;">Я&nbsp;рассматривала альтернативу с&nbsp;оценкой отдельных этапов, но&nbsp;изначально отложила её&nbsp;из-за риска формальных 5*&nbsp;оценок и&nbsp;возможного обвала конверсии из-за длины формы. Но&nbsp;оказалось, что даже при текстовом поле конверсия в&nbsp;завершение отзыва высокая (85%)&nbsp;— значит, пользователи мотивированы и&nbsp;готовы прилагать усилия. Чтобы снизить риск формальных оценок, я&nbsp;явно подсветила, что оценки этапов не&nbsp;влияют на&nbsp;итоговую оценку.</p>
+    </section>
+
+    <!-- Как проверяли варианты -->
+    <section class="section">
+      <h2>Как проверяли варианты</h2>
+      <p class="body-text" style="margin-top:20px;">Из-за различия в&nbsp;сценариях прямое A/B-сравнение с&nbsp;текущей формой невозможно, но&nbsp;вариант 2&nbsp;был очевидным развитием варианта 1&nbsp;в случае успеха. Я&nbsp;предложила запустить их&nbsp;одновременно, чтобы сэкономить время и&nbsp;ресурсы. Сначала вариант 1&nbsp;сравнивается с&nbsp;текущим решением, затем вариант 2&nbsp;— с&nbsp;вариантом 1. Это позволило изолировать влияние изменений и&nbsp;сократить время на&nbsp;принятие решений.</p>
+    </section>
+
+    <!-- Результат -->
+    <section class="section" style="margin-top:50px;">
+      <h2>Результат</h2>
+      <p class="body-text" style="margin-top:20px;">На&nbsp;момент публикации кейса решение готово к&nbsp;A/B-тесту. Жду результатов&nbsp;— они определят дальнейшее развитие системы отзывов.</p>
+    </section>
+
+    <!-- Моя роль -->
+    <section class="section" style="margin-top:50px;">
+      <h2>Моя роль</h2>
+      <p class="body-text" style="margin-top:20px;">Спроектировала два варианта формы отзыва, подготовила пользовательские сценарии и&nbsp;макеты для A/B-теста. Вместе с&nbsp;продактом и&nbsp;аналитиком обсудила различия между вариантами и&nbsp;помогла выбрать, какие решения стоит проверить. Сформулировала логику отображения отзывов в&nbsp;карточке специалиста.</p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <nav class="nav">
+      <a href="https://docs.google.com/document/d/1Eou1gkPrmJTdE23vOFdSpqnvwB2rG64t1Jepd-kIpm8/edit?usp=sharing" target="_blank" rel="noopener">CV</a>
+      <a href="https://www.linkedin.com/in/valeriya-tsarkova-3042b2389/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=letsar95@gmail.com" target="_blank" rel="noopener">E-mail</a>
+      <a href="https://t.me/Valerie_tsar" target="_blank" rel="noopener">Telegram</a>
+      <span class="phone">+7&nbsp;909&nbsp;701&nbsp;84&nbsp;11</span>
+    </nav>
+  </footer>
+
+</div>
+<script src="./case-study.js"></script>
+</body>
+</html>

@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Валерия — портфолио</title>
+<style>
+  @font-face {
+    font-family: 'TT Interphases Pro Trl';
+    src: url('./Fonts/TT%20Interphases%20Pro%20Trial%20Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'TT Interphases Pro Trl';
+    src: url('./Fonts/TT%20Interphases%20Pro%20Trial%20Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'TT Interphases Pro Trl';
+    src: url('./Fonts/TT%20Interphases%20Pro%20Trial%20DemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  *,*::before,*::after { box-sizing: border-box; }
+  html,body { margin:0; padding:0; width:100%; overflow-x: hidden; }
+
+  :root {
+    --text-1: #20262f;
+    --text-3: #bac1ca;
+    --blue: #1988fd;
+    --light-blue: #f2f8ff;
+    --divider: #e3e6ea;
+    --chip-bg: #eff1f8;
+    --bg: #ffffff;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text-1);
+    font-family: 'TT Interphases Pro Trl', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .page {
+    max-width: 1167px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Nav */
+  .nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 40px;
+    padding-top: 52px;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+  }
+  .nav a {
+    color: var(--text-1);
+    text-decoration: none;
+    transition: opacity 200ms ease;
+  }
+  .nav a:hover { opacity: 0.7; }
+  .nav .phone {
+    color: var(--text-1);
+    cursor: default;
+    user-select: text;
+    white-space: nowrap;
+    background: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    position: relative;
+  }
+  .nav .phone-tooltip {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translate(-50%, -4px);
+    background: var(--text-1);
+    color: #fff;
+    font-size: 13px;
+    line-height: 1;
+    padding: 6px 10px;
+    border-radius: 8px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+  .nav .phone.copied .phone-tooltip {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  .footer .phone .phone-tooltip {
+    top: auto;
+    bottom: calc(100% + 8px);
+    transform: translate(-50%, 4px);
+  }
+  .footer .phone.copied .phone-tooltip {
+    transform: translate(-50%, 0);
+  }
+  /* Only interactive on touch devices (mobile/tablet) */
+  @media (hover: none) {
+    .nav .phone { cursor: pointer; }
+  }
+  .nav .email-copy {
+    position: relative;
+    background: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: var(--text-1);
+    cursor: pointer;
+    transition: opacity 200ms ease;
+  }
+  .nav .email-copy:hover { opacity: 0.7; }
+  .nav .email-copy .email-tooltip {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translate(-50%, -4px);
+    background: var(--text-1);
+    color: #fff;
+    font-size: 13px;
+    line-height: 1;
+    padding: 6px 10px;
+    border-radius: 8px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+  .nav .email-copy.copied .email-tooltip {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  .footer .email-copy .email-tooltip {
+    top: auto;
+    bottom: calc(100% + 8px);
+    transform: translate(-50%, 4px);
+  }
+  .footer .email-copy.copied .email-tooltip {
+    transform: translate(-50%, 0);
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: 56px;
+    position: relative;
+  }
+  .hero-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 209px;
+  }
+  .avatar-stack {
+    position: relative;
+    width: 303px;
+    height: 209px;
+    flex: 0 0 303px;
+  }
+  .avatar-stack img {
+    position: absolute;
+    display: block;
+  }
+  .avatar-stack .layer-4 { left: 190px; top: 57px;  width: 113px; height: 91px;  z-index: 1; }
+  .avatar-stack .layer-3 { left: 180px; top: 28px;  width: 82px;  height: 152px; z-index: 2; }
+  .avatar-stack .layer-2 { left: 87px;  top: 0;     width: 132px; height: 158px; z-index: 3; }
+  .avatar-stack .layer-1 { left: 39px;  top: 27px;  width: 132px; height: 182px; z-index: 4; }
+  .avatar-stack .avatar  { left: 0;     top: 57px;  width: 132px; height: 152px; z-index: 5; border-radius: 12px; object-fit: cover; }
+
+  .hero-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    color: var(--text-3);
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    text-align: right;
+  }
+  .hero-meta span { white-space: nowrap; }
+
+  .hero h1 {
+    margin: 44px 0 0;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 60px;
+    letter-spacing: 0;
+    color: var(--text-1);
+    max-width: 1167px;
+  }
+
+  .hero-chips {
+    margin-top: 44px;
+    position: relative;
+    width: 578px;
+    max-width: 100%;
+    height: 96px;
+  }
+  .hero-chips .chips-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  .hero-chips .row {
+    position: absolute;
+    left: 20px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    color: var(--text-1);
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero-chips .row:first-of-type { top: 18px; }
+  .hero-chips .row:last-of-type  { top: 58px; }
+  .hero-chips .sep { color: inherit; }
+
+  /* Sections */
+  .section {
+    margin-top: 112px;
+  }
+  .section h2 {
+    margin: 0 0 56px;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: 0;
+    color: var(--text-1);
+  }
+
+  /* Case cards (Products) */
+  .cases {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+  .case {
+    display: flex;
+    gap: 49px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--divider);
+    align-items: flex-start;
+  }
+  .case:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  a.case-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+  .case-image {
+    flex: 0 0 561px;
+    width: 561px;
+    height: 365px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #EBEBEB;
+    position: relative;
+    transform-origin: center center;
+    transition: transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .case-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    image-rendering: auto;
+  }
+  @media (hover: hover) {
+    .case:hover .case-image {
+      transform: scale(1.04);
+    }
+  }
+  .case-info {
+    flex: 1 1 auto;
+    max-width: 557px;
+    padding-top: 0;
+  }
+  .case-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    color: var(--text-3);
+  }
+  .case-title {
+    margin: 16px 0 0;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 38px;
+    letter-spacing: 0.01em;
+    color: var(--text-1);
+  }
+  .case-status {
+    margin-top: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+    line-height: 25px;
+    color: var(--blue);
+    font-weight: 500;
+  }
+  .case-status::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle, var(--blue) 3px, rgba(25, 136, 253, 0.2) 3px);
+    display: inline-block;
+    flex-shrink: 0;
+  }
+  .case-status.no-dot::before { display: none; }
+  .case-tags {
+    margin-top: 41px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 41px;
+    padding: 4px 12px;
+    border-radius: 10px;
+    background: var(--light-blue);
+    color: var(--text-1);
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0.8;
+  }
+  .tag.plain {
+    background: transparent;
+    padding: 0;
+    height: auto;
+    opacity: 1;
+  }
+
+  /* Concepts */
+  .concepts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px 45px;
+  }
+  .concept-image {
+    width: 100%;
+    aspect-ratio: 561 / 365;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #EBEBEB;
+    transform-origin: center center;
+    transition: transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .concept-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    image-rendering: auto;
+  }
+  @media (hover: hover) {
+    .concept:hover .concept-image {
+      transform: scale(1.04);
+    }
+  }
+  .concept-meta {
+    margin-top: 24px;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    color: var(--text-3);
+  }
+  .concept-title {
+    margin: 12px 0 0;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 38px;
+    letter-spacing: 0.01em;
+    color: var(--text-1);
+  }
+  .concept-tags {
+    margin-top: 16px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 117px;
+    padding-bottom: 50px;
+  }
+  .footer .nav {
+    padding-top: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .case {
+      flex-direction: column;
+      gap: 24px;
+      align-items: stretch;
+      padding-bottom: 44px;
+    }
+    .case-image {
+      flex: 0 0 auto;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 561 / 365;
+    }
+    .case-info { max-width: 100%; width: 100%; }
+    .case-tags { margin-top: 33px; }
+    .concepts {
+      grid-template-columns: 1fr;
+      gap: 56px;
+    }
+    .hero h1 { font-size: 36px; line-height: 44px; margin-top: 24px; }
+    .section h2 { font-size: 32px; line-height: 32px; }
+    .case-title, .concept-title { font-size: 24px; line-height: 30px; }
+    .hero-top {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 40px;
+      min-height: 0;
+    }
+    .avatar-stack { flex: 0 0 auto; }
+    .hero-meta { align-items: flex-start; text-align: left; }
+    .hero-chips {
+      margin-top: 32px;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .hero-chips .chips-bg { display: none; }
+    .hero-chips .row {
+      position: relative;
+      top: auto;
+      left: auto;
+      background: var(--light-blue);
+      padding: 14px 16px;
+      max-width: 100%;
+      width: max-content;
+      white-space: normal;
+      flex-wrap: wrap;
+    }
+    .hero-chips .row:first-of-type {
+      top: auto;
+      border-radius: 16px 16px 16px 0;
+    }
+    .hero-chips .row:last-of-type {
+      top: auto;
+      border-radius: 0 16px 16px 16px;
+      margin-top: -16px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .nav {
+      gap: 16px;
+      font-size: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      padding-top: 24px;
+    }
+    .nav a, .nav .phone, .nav .email-copy {
+      white-space: nowrap;
+    }
+    .page { padding: 0 16px; }
+    .hero h1 { font-size: 28px; line-height: 36px; margin-top: 20px; }
+    .section h2 { font-size: 28px; line-height: 32px; }
+    .case-title, .concept-title { font-size: 22px; line-height: 28px; }
+    .hero-meta { font-size: 14px; gap: 8px; }
+  }
+
+  /* Mobile-only adjustments */
+  @media (max-width: 560px) {
+    .case-meta { font-size: 14px; }
+    .case-status { font-size: 14px; line-height: 20px; }
+    .concept-meta { font-size: 14px; }
+    .section { margin-top: 72px; }
+    .section + .section { margin-top: 84px; }
+    .section h2 { margin-bottom: 40px; }
+    .footer { margin-top: 85px; padding-bottom: 40px; }
+    .tag { font-size: 14px; height: 36px; padding: 4px 10px; border-radius: 8px; }
+    .case-tags { margin-top: 25px; }
+    .case { padding-bottom: 36px; }
+    .cases { gap: 52px; }
+    .case-title { margin-top: 12px; }
+    .concept-title { margin-top: 8px; }
+    .hero-chips .row {
+      font-size: 14px;
+      line-height: 22px;
+      padding: 10px 14px;
+      gap: 6px;
+    }
+    .hero-chips .row:first-of-type {
+      border-radius: 12px 12px 12px 0;
+    }
+    .hero-chips .row:last-of-type {
+      border-radius: 0 12px 12px 12px;
+      margin-top: -12px;
+    }
+    .avatar-stack {
+      transform: scale(0.7);
+      transform-origin: top left;
+      margin-bottom: -63px;
+      margin-right: -91px;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="nav">
+    <a href="https://docs.google.com/document/d/1Eou1gkPrmJTdE23vOFdSpqnvwB2rG64t1Jepd-kIpm8/edit?usp=sharing" target="_blank" rel="noopener">CV</a>
+    <a href="https://www.linkedin.com/in/valeriya-tsarkova-3042b2389/" target="_blank" rel="noopener">LinkedIn</a>
+    <button type="button" class="email-copy" data-email="letsar95@gmail.com" aria-label="Скопировать e-mail">E-mail<span class="email-tooltip" aria-hidden="true">Скопировано letsar95@gmail.com</span></button>
+    <a href="https://t.me/Valerie_tsar" target="_blank" rel="noopener">Telegram</a>
+    <button type="button" class="phone phone-copy" data-copy="+79097018411" aria-label="Скопировать номер телефона">+7&nbsp;909&nbsp;701&nbsp;84&nbsp;11<span class="phone-tooltip" aria-hidden="true">Скопировано</span></button>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-top">
+      <div class="avatar-stack" aria-hidden="true">
+        <img class="layer-4" src="./images/main%20page/avatar%20layers%C2%A0x2/avatar%20layer%204.png" alt="" />
+        <img class="layer-3" src="./images/main%20page/avatar%20layers%C2%A0x2/avatar%20layer%203.png" alt="" />
+        <img class="layer-2" src="./images/main%20page/avatar%20layers%C2%A0x2/avatar%20layer%202.png" alt="" />
+        <img class="layer-1" src="./images/main%20page/avatar%20layers%C2%A0x2/avatar%20layer%201.png" alt="" />
+        <img class="avatar"  src="./images/main%20page/avatar%20layers%C2%A0x2/avatar.png" alt="Валерия" />
+      </div>
+      <div class="hero-meta">
+        <span>B2C, B2B&nbsp;&nbsp;/&nbsp;&nbsp;WEB, mobile</span>
+        <span>Proptech&nbsp;&nbsp;/&nbsp;&nbsp;SaaS&nbsp;&nbsp;/&nbsp;&nbsp;Service marketplace&nbsp;&nbsp;/&nbsp;&nbsp;Fintech</span>
+      </div>
+    </div>
+
+    <h1>Привет, я&nbsp;Валерия&nbsp;— 8&nbsp;лет проектирую интерфейсы, которые помогают пользователям и&nbsp;бизнесу</h1>
+
+    <div class="hero-chips">
+      <svg class="chips-bg" width="578" height="96" viewBox="0 0 578 96" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 0 L562 0 A16 16 0 0 1 578 16 L578 40 A16 16 0 0 1 562 56 L542 56 A16 16 0 0 0 526 72 L526 80 A16 16 0 0 1 510 96 L16 96 A16 16 0 0 1 0 80 L0 16 A16 16 0 0 1 16 0 Z" fill="#f2f8ff"/>
+      </svg>
+      <div class="row">
+        <span>Structured product thinking</span>
+        <span class="sep">/</span>
+        <span>Process optimization</span>
+        <span class="sep">/</span>
+        <span>Metrics-driven UX</span>
+      </div>
+      <div class="row">
+        <span>Complex interfaces</span>
+        <span class="sep">/</span>
+        <span>Role-based workflows</span>
+        <span class="sep">/</span>
+        <span>Personal accounts</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Продукты</h2>
+    <div class="cases">
+
+      <a class="case case-link" href="./case-flipping.html">
+        <div class="case-image">
+          <img src="./images/main%20page/case1.png?v=3" alt="MVP платформы Флиппинг Плюс" onerror="this.style.display='none'" />
+        </div>
+        <div class="case-info">
+          <div class="case-meta">
+            <span>B2C&nbsp;&nbsp;/&nbsp;&nbsp;WEB &amp; mobile</span>
+            <span>2025</span>
+          </div>
+          <h3 class="case-title">MVP платформы Флиппинг Плюс</h3>
+          <div class="case-status">Действующий продукт</div>
+          <div class="case-tags">
+            <span class="tag">Дизайн для&nbsp;MVP</span>
+            <span class="tag">Сложный интерфейс</span>
+            <span class="tag">Сценарии с&nbsp;ролями</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="case case-link" href="./case-franchise.html">
+        <div class="case-image">
+          <img src="./images/main%20page/case2.png?v=3" alt="Редизайн лендинга франшизы на сайте Самолет Плюс" onerror="this.style.display='none'" />
+        </div>
+        <div class="case-info">
+          <div class="case-meta">
+            <span>B2C&nbsp;&nbsp;/&nbsp;&nbsp;WEB &amp; mobile</span>
+            <span>2024</span>
+          </div>
+          <h3 class="case-title">Редизайн лендинга франшизы на&nbsp;сайте Самолет Плюс</h3>
+          <div class="case-status">Действующий продукт</div>
+          <div class="case-tags">
+            <span class="tag">Продающий UI в&nbsp;рамках дизайн-системы</span>
+            <span class="tag">Повышение конверсии</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="case case-link" href="./case-reviews.html">
+        <div class="case-image">
+          <img src="./images/main%20page/case3.png?v=3" alt="Редизайн формы отзыва для Profi.ru" onerror="this.style.display='none'" />
+        </div>
+        <div class="case-info">
+          <div class="case-meta">
+            <span>B2C&nbsp;&nbsp;/&nbsp;&nbsp;Mobile app</span>
+            <span>2026</span>
+          </div>
+          <h3 class="case-title">Редизайн формы отзыва для&nbsp;Profi.ru</h3>
+          <div class="case-status no-dot">A/B-тест</div>
+          <div class="case-tags">
+            <span class="tag">Повышение качества сбора данных</span>
+            <span class="tag">Проработка сценариев формы</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Концепты</h2>
+    <div class="concepts">
+
+      <a class="concept case-link" href="./case-marusya.html">
+        <div class="concept-image">
+          <img src="./images/main%20page/concept1.png?v=3" alt="Интеграция Маруси в WEB-формат" onerror="this.style.display='none'" />
+        </div>
+        <div class="concept-meta">WEB</div>
+        <h3 class="concept-title">Интеграция Маруси в&nbsp;WEB&#8209;формат</h3>
+        <div class="concept-tags">
+          <span class="tag">Конкурсная работа</span>
+          <span class="tag plain">🏆 1&nbsp;место</span>
+        </div>
+      </a>
+
+      <a class="concept case-link" href="./case-hrm.html">
+        <div class="concept-image">
+          <img src="./images/main%20page/concept2.png?v=3" alt="HRM для Artsofte" onerror="this.style.display='none'" />
+        </div>
+        <div class="concept-meta">WEB</div>
+        <h3 class="concept-title">HRM для&nbsp;Artsofte</h3>
+        <div class="concept-tags">
+          <span class="tag">Рабочий концепт</span>
+        </div>
+      </a>
+
+      <a class="concept case-link" href="./case-motivation.html">
+        <div class="concept-image">
+          <img src="./images/main%20page/concept3.png?v=3" alt="Мотивационное приложение" onerror="this.style.display='none'" />
+        </div>
+        <div class="concept-meta">Mobile app</div>
+        <h3 class="concept-title">Мотивационное приложение</h3>
+        <div class="concept-tags">
+          <span class="tag">Конкурсная работа</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <nav class="nav">
+      <a href="https://docs.google.com/document/d/1Eou1gkPrmJTdE23vOFdSpqnvwB2rG64t1Jepd-kIpm8/edit?usp=sharing" target="_blank" rel="noopener">CV</a>
+      <a href="https://www.linkedin.com/in/valeriya-tsarkova-3042b2389/" target="_blank" rel="noopener">LinkedIn</a>
+      <button type="button" class="email-copy" data-email="letsar95@gmail.com" aria-label="Скопировать e-mail">E-mail<span class="email-tooltip" aria-hidden="true">Скопировано letsar95@gmail.com</span></button>
+      <a href="https://t.me/Valerie_tsar" target="_blank" rel="noopener">Telegram</a>
+      <button type="button" class="phone phone-copy" data-copy="+79097018411" aria-label="Скопировать номер телефона">+7&nbsp;909&nbsp;701&nbsp;84&nbsp;11<span class="phone-tooltip" aria-hidden="true">Скопировано</span></button>
+    </nav>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.email-copy').forEach(function (btn) {
+    btn.addEventListener('click', async function () {
+      var email = btn.dataset.email;
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(email);
+        } else {
+          var ta = document.createElement('textarea');
+          ta.value = email;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+        }
+        btn.classList.add('copied');
+        clearTimeout(btn._t);
+        btn._t = setTimeout(function () { btn.classList.remove('copied'); }, 1600);
+      } catch (e) {
+        window.prompt('Скопируйте e-mail вручную:', email);
+      }
+    });
+  });
+
+  // Phone tap-to-copy (only fires on touch devices; on desktop pointer no-hover style keeps it inert visually)
+  document.querySelectorAll('.phone-copy').forEach(function (btn) {
+    // Only enable click on touch devices
+    var isTouch = window.matchMedia && window.matchMedia('(hover: none)').matches;
+    if (!isTouch) return;
+    btn.addEventListener('click', async function () {
+      var phone = btn.dataset.copy;
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(phone);
+        } else {
+          var ta = document.createElement('textarea');
+          ta.value = phone;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+        }
+        btn.classList.add('copied');
+        clearTimeout(btn._t);
+        btn._t = setTimeout(function () { btn.classList.remove('copied'); }, 1600);
+      } catch (e) {
+        window.prompt('Скопируйте номер вручную:', phone);
+      }
+    });
+  });
+</script>
+</body>
+</html>

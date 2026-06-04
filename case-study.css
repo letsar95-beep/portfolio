@@ -1,0 +1,667 @@
+/* ============================================================
+   CASE STUDY — shared styles for all portfolio case pages
+   Подключение:  <link rel="stylesheet" href="./case-study.css" />
+   Шрифты лежат в ./Fonts/ , токены и компоненты ниже.
+   НЕ дублируй эти стили внутри страниц — правь только здесь.
+   ============================================================ */
+
+@font-face {
+  font-family: 'TT Interphases Pro Trl';
+  src: url('./Fonts/TT%20Interphases%20Pro%20Trial%20Regular.ttf') format('truetype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'TT Interphases Pro Trl';
+  src: url('./Fonts/TT%20Interphases%20Pro%20Trial%20Medium.ttf') format('truetype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'TT Interphases Pro Trl';
+  src: url('./Fonts/TT%20Interphases%20Pro%20Trial%20DemiBold.ttf') format('truetype');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+
+*,*::before,*::after { box-sizing: border-box; }
+html,body { margin:0; padding:0; width:100%; overflow-x:hidden; }
+
+:root {
+  --text-1: #20262f;   /* основной текст, заголовки */
+  --text-2: #4c5158;   /* body-текст, описания */
+  --text-3: #bac1ca;   /* приглушённый: год, крестик */
+  --blue: #1988fd;     /* акцент, ссылки */
+  --light-blue: #f2f8ff; /* фон бейджей */
+  --card-bg: #f8f9fa;  /* фон карточек и медиа */
+  --divider: #e3e6ea;  /* линия-разделитель */
+  --bg: #ffffff;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-1);
+  font-family: 'TT Interphases Pro Trl', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 100px;
+}
+
+/* ── Nav ── */
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 40px;
+  padding-top: 52px;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+}
+.nav a { color: var(--text-1); text-decoration: none; transition: opacity 200ms ease; }
+.nav a:hover { opacity: 0.7; }
+.nav .phone { color: var(--text-1); cursor: default; user-select: text; white-space: nowrap; }
+
+/* ── Close button (прибит к верху, серый) ── */
+.close-btn {
+  position: fixed;
+  top: 52px;
+  right: max(20px, calc((100vw - 1300px) / 2 + 40px));
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--text-3);
+  text-decoration: none;
+  z-index: 100;
+  transition: opacity 200ms ease;
+}
+.close-btn:hover { opacity: 0.7; }
+
+/* ── Case header ── */
+.case-header { margin-top: 76px; }
+
+.case-header h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0;
+  color: var(--text-1);
+}
+
+.case-year {
+  margin-top: 24px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: var(--text-3);
+}
+
+.case-meta-row {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  height: 41px;
+  padding: 0 12px;
+  background: var(--light-blue);
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.2px;
+  color: rgba(32, 38, 47, 0.8);
+}
+
+.case-link {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.2px;
+  color: var(--blue);
+  text-decoration: none;
+  transition: opacity 200ms ease;
+}
+.case-link:hover { opacity: 0.7; }
+.case-link .arrow {
+  font-size: 20px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  top: 2px;
+}
+
+/* ── Hero image ── */
+.hero {
+  margin-top: 34px;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+}
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ── Info row (3 колонки фактов) ── */
+.info-row {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 7%;
+}
+.info-col {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.18px;
+  color: var(--text-2);
+}
+.info-col:first-child { max-width: calc(100% - 30px); }
+/* равные колонки — средний блок ровно между крайними */
+.info-row.even { grid-template-columns: 1fr 1fr 1fr; gap: 30px; }
+.info-row.even .info-col:first-child { max-width: none; }
+.info-col strong {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 400;
+  color: var(--text-1);
+}
+
+/* ── Divider ── */
+.divider {
+  margin-top: 48px;
+  border: none;
+  border-top: 1px solid var(--divider);
+}
+
+/* ── Problem/Goal cards ── */
+.cards-row {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 20px;
+}
+.card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 32px;
+}
+.card-label {
+  margin: 0 0 12px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: var(--text-1);
+}
+.card-body {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.18px;
+  color: var(--text-2);
+}
+
+/* ── Sections ── */
+.section { margin-top: 80px; }
+
+.section h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.3px;
+  color: var(--text-1);
+}
+
+.section h4 {
+  margin: 40px 0 0;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.24px;
+  color: var(--text-1);
+}
+
+.body-text {
+  margin: 24px 0 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.18px;
+  color: var(--text-2);
+  max-width: 798px;
+}
+
+.body-text.wide { max-width: 798px; }
+.body-text + .body-text { margin-top: 16px; }
+
+.body-text a {
+  color: var(--blue);
+  text-decoration: none;
+}
+.body-text a:hover { text-decoration: underline; }
+
+.url-link {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--blue);
+  text-decoration: none;
+  transition: opacity 200ms ease;
+}
+.url-link:hover { opacity: 0.7; }
+
+/* ── Lists ── */
+.styled-list {
+  margin: 16px 0 0;
+  padding: 0 0 0 27px;
+  max-width: 798px;
+  list-style: disc;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.18px;
+  color: var(--text-2);
+}
+.styled-list li {
+  margin-bottom: 4px;
+}
+
+/* ── Gallery / медиа ── */
+.gallery {
+  margin-top: 48px;
+  display: grid;
+  gap: 20px;
+}
+.gallery.full { grid-template-columns: 1fr; }
+.gallery.cols-2 { grid-template-columns: 1fr 1fr; }
+.body-text + .gallery { margin-top: 40px; }
+.gallery + .body-text { margin-top: 80px; }
+.sub-heading + .gallery { margin-top: 40px; }
+.body-text + .carousel, .sub-heading + .carousel, .gallery + .carousel { margin-top: 40px; }
+.carousel + .body-text { margin-top: 80px; }
+
+.media {
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--card-bg);
+  width: 100%;
+}
+.media img {
+  display: block;
+  width: 100%;
+  height: auto;       /* НИКОГДА не обрезай по высоте: без object-fit/aspect-ratio */
+}
+
+/* ── Research block ── */
+.research-block { margin-top: 50px; }
+.research-block + .sub-heading { margin-top: 24px; }
+
+.research-img {
+  display: block;
+  width: 770px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── Sub-heading внутри секции ── */
+.section .sub-heading {
+  margin: 40px 0 0;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.24px;
+  color: var(--text-1);
+}
+.sub-heading + .body-text { margin-top: 16px; }
+.case-hrm .sub-heading + .body-text { margin-top: 12px; }
+@media (min-width: 901px) {
+  .case-hrm .cards-row { grid-template-columns: 1fr 1fr; }
+}
+.section .gallery + .sub-heading,
+.section .carousel + .sub-heading { margin-top: 56px; }
+
+/* ── Кейс одним полотном (нарезанные срезы) в рамке с тенью (Маруся) ── */
+.shot-page { width: 1400px; max-width: 100%; margin: 0 auto; }
+.shot-head { padding: 76px 0 0; }
+.shot-head h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--text-1);
+}
+.shot-subtitle {
+  margin: 24px 0 0;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text-1);
+}
+.shot-head .card { margin-top: 40px; }
+body.motivation .shot-subtitle { margin-top: 20px; }
+.shot-head .card-body { max-width: 714px; }
+body.motivation .shot-head .card-body { max-width: 914px; }
+@media (max-width: 900px) {
+  .shot-head h1 { font-size: 40px; }
+}
+@media (max-width: 640px) {
+  .shot-head { padding-top: 56px; }
+  .shot-head h1 { font-size: 28px; line-height: 36px; }
+  .shot-subtitle { font-size: 16px; margin-top: 20px; }
+  .shot-head .card { margin-top: 36px; }
+}
+.shot-case {
+  width: 1400px;
+  max-width: 100%;
+  margin: 40px auto 80px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 200px rgba(0, 0, 0, 0.05);
+}
+.shot-case img { display: block; width: 100%; height: auto; }
+.shot-case.flush { border-radius: 0; margin-bottom: 0; }
+body.motivation .shot-case { margin-top: 52px; }
+.close-btn.shot-close { top: 36px; }
+@media (max-width: 640px) {
+  .shot-case { margin: 40px auto 40px; border-radius: 16px; }
+}
+
+/* ── Footer ── */
+.footer { margin-top: 120px; padding-bottom: 60px; }
+.footer .nav { padding-top: 0; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1100px) {
+  .page { padding: 0 48px; }
+  .close-btn.shot-close { top: 16px; }
+}
+
+@media (max-width: 900px) {              /* планшет */
+  .page { padding: 0 32px; }
+  .case-header h1 { font-size: 40px; }
+  .info-row, .info-row.even { grid-template-columns: 1fr; gap: 24px; }
+  /* 3-я колонка во всю ширину, чтобы длинный текст влезал в 2 строки */
+  .info-row.even .info-col:nth-child(3) { grid-column: 1 / -1; }
+  .cards-row { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .section h2 { font-size: 28px; }
+  .section h2 + .body-text { margin-top: 16px; }
+  .gallery.cols-2 { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   FLEXIBLE LAYER — конструктор под разную структуру кейсов.
+   Семантика остаётся в компонентах выше; здесь — РАСКЛАДКА.
+   Комбинируй классы, НЕ пиши CSS под отдельную страницу.
+   ============================================================ */
+
+/* — Сетка: любое число колонок, схлопывается на адаптиве — */
+.cols { display: grid; gap: 20px; }
+.cols > * { min-width: 0; }
+.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.cols-4 { grid-template-columns: repeat(4, 1fr); }
+/* авто-сетка: сколько влезет, минимум 260px на элемент */
+.cols-auto { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+/* .gallery тоже понимает cols-3 / cols-4 */
+.gallery.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.gallery.cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* — Ряд: элементы в строку (например, два телефона) — */
+.row { display: flex; gap: 20px; flex-wrap: wrap; }
+.row > * { flex: 1 1 0; min-width: 0; }
+.row.top { align-items: flex-start; }
+.row.middle { align-items: center; }
+
+/* — Центрированная секция (заголовок + интро по центру) — */
+.section.center > h2,
+.section.center > .body-text,
+.section.center > .sub-heading { text-align: center; }
+.section.center > .body-text { margin-left: auto; margin-right: auto; }
+
+/* — Панель: цветная/градиентная подложка под контент — */
+/* Цвет задаётся на странице:  style="--panel-bg: linear-gradient(...)"  */
+.panel {
+  background: var(--panel-bg, var(--card-bg));
+  border-radius: 20px;
+  padding: 40px;
+}
+.panel.tint { --panel-bg: var(--light-blue); }
+
+/* — Карусель (стрелки кликабельны через case-study.js) — */
+.carousel { position: relative; }
+/* viewport = трек + стрелки (высотой ровно с картинку); точки — отдельно снизу */
+.carousel-viewport { position: relative; }
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+.carousel-track > * { flex: 0 0 100%; scroll-snap-align: start; }
+/* кликабельная зона стрелки — во всю высоту и до ближайшего края картинки */
+.carousel-arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 84px;
+  max-width: 22%;
+  display: flex;
+  align-items: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
+  padding: 0 14px;
+  transition: opacity 200ms ease;
+}
+.carousel-arrow.prev { left: 0; justify-content: flex-start; }
+.carousel-arrow.next { right: 0; justify-content: flex-end; }
+.carousel-arrow > img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  transition: opacity 200ms ease;
+}
+.carousel-arrow:hover > img { opacity: 0.6; }
+
+/* — Точки-индикаторы слайдов — */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--text-3);
+  cursor: pointer;
+  transition: background 200ms ease, width 200ms ease, height 200ms ease;
+}
+.carousel-dot.active {
+  width: 10px;
+  height: 10px;
+  background: var(--text-1);
+}
+
+/* — Figure: отдельная диаграмма/схема (не во всю ширину) — */
+.figure { margin-top: 40px; }
+.figure img { display: block; max-width: 100%; height: auto; }
+.figure.center { text-align: center; }
+.figure.center img { margin-left: auto; margin-right: auto; }
+.body-text + .figure { margin-top: 24px; }
+/* масштабируемая диаграмма: базовая ширина через --fig-w,
+   на планшете и мобилке уменьшается в 1.5 раза */
+.figure img.fig-scale { width: var(--fig-w); }
+@media (max-width: 900px) {
+  .figure img.fig-scale { width: calc(var(--fig-w) / 1.5); }
+}
+
+/* — Утилиты отступов сверху (escape-hatch под нестандартный ритм) — */
+.mt-0   { margin-top: 0   !important; }
+.mt-8   { margin-top: 8px  !important; }
+.mt-16  { margin-top: 16px !important; }
+.mt-24  { margin-top: 24px !important; }
+.mt-40  { margin-top: 40px !important; }
+.mt-56  { margin-top: 56px !important; }
+.mt-80  { margin-top: 80px !important; }
+.mt-120 { margin-top: 120px !important; }
+
+/* — Лайтбокс: увеличение картинок (включается на мобилке через JS) — */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(20, 24, 30, 0.92);
+  overscroll-behavior: contain;
+}
+.lightbox.open { display: flex; }
+.lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  touch-action: none;        /* жестами управляет JS (pinch/pan) */
+  will-change: transform;
+  transform-origin: center center;
+}
+.lightbox-close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+/* подсказка, что картинку можно открыть (на всех ширинах) */
+.hero img, .media img, .figure img, .research-img { cursor: zoom-in; }
+
+/* ============================================================
+   RESPONSIVE — flexible layer
+   ============================================================ */
+@media (max-width: 900px) {
+  .cols-3, .cols-4,
+  .gallery.cols-3, .gallery.cols-4 { grid-template-columns: repeat(2, 1fr); }
+  .panel { padding: 32px; }
+  /* лид-ряд на планшете: текст шире, картинка прижата вправо, зазор 60 */
+  .row.img-first { gap: 60px; }
+  .row.img-first > .figure { flex: 0 0 auto; }
+}
+@media (max-width: 640px) {
+  .cols-2, .cols-3, .cols-4, .cols-auto,
+  .gallery.cols-3, .gallery.cols-4 { grid-template-columns: 1fr; }
+  .row { flex-direction: column; }
+  .row.img-first { gap: 20px; }
+  /* картинка над текстом, прижата влево */
+  .row.img-first { align-items: flex-start; }
+  .row.img-first .figure { order: -1; align-self: flex-start; }
+  .row.img-first .figure img { margin-left: 0 !important; }
+  .figure img.fig-scale { width: calc(var(--fig-w) / 2); }
+  .panel { padding: 24px; }
+  .carousel-arrow { padding: 0 8px; }
+  /* на мобилке прячем иконки стрелок, но кликабельные края и свайп работают */
+  .carousel-arrow > img { display: none; }
+  .carousel-dot { width: 6px; height: 6px; }
+  .carousel-dot.active { width: 8px; height: 8px; }
+
+  .hide-sm { display: none !important; }
+  /* мобильные утилиты отступа сверху (только ≤640) */
+  .mt-sm-0   { margin-top: 0    !important; }
+  .mt-sm-8   { margin-top: 8px  !important; }
+  .mt-sm-12  { margin-top: 12px !important; }
+  .mt-sm-16  { margin-top: 16px !important; }
+  .mt-sm-20  { margin-top: 20px !important; }
+  .mt-sm-24  { margin-top: 24px !important; }
+  .mt-sm-26  { margin-top: 26px !important; }
+  .mt-sm-28  { margin-top: 28px !important; }
+  .mt-sm-32  { margin-top: 32px !important; }
+  .mt-sm-34  { margin-top: 34px !important; }
+  .mt-sm-36  { margin-top: 36px !important; }
+  .mt-sm-40  { margin-top: 40px !important; }
+  .mt-sm-42  { margin-top: 42px !important; }
+  .mt-sm-44  { margin-top: 44px !important; }
+  .mt-sm-48  { margin-top: 48px !important; }
+  .mt-sm-52  { margin-top: 52px !important; }
+  .mt-sm-56  { margin-top: 56px !important; }
+  .mt-sm-60  { margin-top: 60px !important; }
+  .mt-sm-64  { margin-top: 64px !important; }
+  .mt-sm-68  { margin-top: 68px !important; }
+  .mt-sm-72  { margin-top: 72px !important; }
+  .mt-sm-80  { margin-top: 80px !important; }
+  .mt-sm-84  { margin-top: 84px !important; }
+}
+
+@media (max-width: 640px) {              /* мобилка */
+  .page { padding: 0 16px; }
+  .nav { gap: 16px; font-size: 14px; flex-wrap: wrap; padding-top: 24px; }
+  .case-header { margin-top: 36px; }
+  .close-btn { top: 24px; right: 16px; }
+  .case-header h1 { font-size: 28px; line-height: 36px; }
+  .case-year { margin-top: 16px; font-size: 16px; }
+  .case-meta-row { margin-top: 20px; }
+  .tag { height: 33px; font-size: 16px; }
+  .case-link { font-size: 16px; margin-left: auto; gap: 2px; }
+  .info-row, .info-row.even { grid-template-columns: 1fr; gap: 20px; }
+  .cards-row { grid-template-columns: 1fr; margin-top: 44px; }
+  .section { margin-top: 40px; }
+  .section h2 { font-size: 24px; }
+  .section h2 + .body-text { margin-top: 8px; }
+  .section h4 { font-size: 20px; }
+  .section .sub-heading { font-size: 20px; }
+  .body-text + .gallery { margin-top: 24px; }
+  .gallery + .body-text { margin-top: 72px; }
+  .body-text,
+  .card-body,
+  .info-col,
+  .styled-list { font-size: 16px; }
+  .card-label { font-size: 20px; margin-bottom: 12px; line-height: 1.2; }
+  .card { padding: 24px; }
+  .gallery { margin-top: 32px; gap: 12px; }
+  .footer { margin-top: 100px; padding-bottom: 40px; }
+}
