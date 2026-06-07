@@ -1,0 +1,340 @@
+{
+  "images/main page/case1.webp": {
+    "fullW": 1683,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/main page/case2.webp": {
+    "fullW": 1683,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/main page/case3.webp": {
+    "fullW": 1683,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/main page/concept1.webp": {
+    "fullW": 1400,
+    "variants": [
+      800
+    ]
+  },
+  "images/main page/concept2.webp": {
+    "fullW": 1400,
+    "variants": [
+      800
+    ]
+  },
+  "images/main page/concept3.webp": {
+    "fullW": 1400,
+    "variants": [
+      800
+    ]
+  },
+  "images/main page/главная для описи.webp": {
+    "fullW": 1727,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/Маруся/Маруся 1.webp": {
+    "fullW": 2800,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/Маруся/Маруся 2.webp": {
+    "fullW": 2800,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/Маруся/Маруся 3.webp": {
+    "fullW": 2800,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/Маруся/Маруся 4.webp": {
+    "fullW": 2800,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/Мотивационное приложение/Мотивация 1.webp": {
+    "fullW": 2800,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/Мотивационное приложение/Мотивация 10.webp": {
+    "fullW": 2800,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/Мотивационное приложение/Мотивация 2.webp": {
+    "fullW": 2800,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/Мотивационное приложение/Мотивация 3.webp": {
+    "fullW": 2800,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/Мотивационное приложение/Мотивация 4.webp": {
+    "fullW": 2800,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/Мотивационное приложение/Мотивация 5.webp": {
+    "fullW": 2800,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/Мотивационное приложение/Мотивация 6.webp": {
+    "fullW": 2800,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/Мотивационное приложение/Мотивация 7.webp": {
+    "fullW": 2800,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/Мотивационное приложение/Мотивация 8.webp": {
+    "fullW": 2800,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/Мотивационное приложение/Мотивация 9.webp": {
+    "fullW": 2800,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/кейс Отзывы/Профи Отзывы 1 вариант Текст.webp": {
+    "fullW": 4666,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/кейс Отзывы/Профи Отзывы 1 вариант.webp": {
+    "fullW": 5514,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/кейс Отзывы/Профи Отзывы 2 вариант.webp": {
+    "fullW": 5514,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/кейс Отзывы/первая кратинка в кейсе.webp": {
+    "fullW": 2600,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/кейс Франшиза/image 0.webp": {
+    "fullW": 2600,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/кейс Франшиза/image 1.webp": {
+    "fullW": 2600,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/кейс Франшиза/image 2.webp": {
+    "fullW": 2600,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/кейс Франшиза/image 3.webp": {
+    "fullW": 2600,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/кейс Франшиза/image 4.webp": {
+    "fullW": 2600,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/кейс Франшиза/main image.webp": {
+    "fullW": 2600,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/кейс Франшиза/кейс Лендос франшизы.webp": {
+    "fullW": 1500,
+    "variants": [
+      800
+    ]
+  },
+  "images/кейс Франшиза/подготовка.webp": {
+    "fullW": 1540,
+    "variants": [
+      800
+    ]
+  },
+  "images/кейс флиппинг/image 1.webp": {
+    "fullW": 2272,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/кейс флиппинг/image 2.webp": {
+    "fullW": 2700,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/кейс флиппинг/image 3.webp": {
+    "fullW": 2700,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/кейс флиппинг/image 4.webp": {
+    "fullW": 2700,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/кейс флиппинг/main.webp": {
+    "fullW": 2700,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/концепт HRM/main.webp": {
+    "fullW": 2600,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/концепт HRM/Контроль развития сотрудника в ЛК HR-менеджера.webp": {
+    "fullW": 2600,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/концепт HRM/ЛК HR-менеджера.webp": {
+    "fullW": 2600,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/концепт HRM/ЛК сотрудника.webp": {
+    "fullW": 2600,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/концепт HRM/Обучение и отслеживание своего роста в ЛК сотрудника.webp": {
+    "fullW": 2600,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/концепт HRM/карусель - Контроль развития сотрудника в ЛК HR-менеджера 1.webp": {
+    "fullW": 2600,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/концепт HRM/карусель - Контроль развития сотрудника в ЛК HR-менеджера 2.webp": {
+    "fullW": 2600,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/концепт HRM/карусель - Онбординг у HR-менеджера 1.webp": {
+    "fullW": 2600,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/концепт HRM/карусель - Онбординг у HR-менеджера 2.webp": {
+    "fullW": 2600,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/концепт HRM/карусель - Онбординг у сотрудника 1.webp": {
+    "fullW": 2600,
+    "variants": [
+      800,
+      1600
+    ]
+  },
+  "images/концепт HRM/карусель - Онбординг у сотрудника 2.webp": {
+    "fullW": 2600,
+    "variants": [
+      800,
+      1600
+    ]
+  }
+}

@@ -184,7 +184,8 @@
     for (var i = 0; i < imgs.length; i++) {
       (function (img) {
         img.addEventListener('click', function () {
-          open(img.currentSrc || img.src, img.alt);
+          // в лайтбоксе — полноразмерная версия (data-full), чтобы при зуме было чётко
+          open(img.getAttribute('data-full') || img.currentSrc || img.src, img.alt);
         });
       })(imgs[i]);
     }
