@@ -463,35 +463,35 @@
     }
     .avatar-stack { flex: 0 0 auto; }
     .hero-meta { align-items: flex-start; text-align: left; }
+    /* адаптив: все бейджи — один непрерывный список, переносится по ширине;
+       слеш ведёт следующий элемент (не висит в конце строки) */
     .hero-chips {
       margin-top: 32px;
       width: auto;
       max-width: 100%;
       height: auto;
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      flex-wrap: wrap;
+      align-items: baseline;
+      row-gap: 14px;
+      background: var(--light-blue);
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-size: 16px;
+      line-height: 20px;
+      color: var(--text-1);
     }
     .hero-chips .chips-bg { display: none; }
-    .hero-chips .row {
-      position: relative;
-      top: auto;
-      left: auto;
-      background: var(--light-blue);
-      padding: 14px 16px;
-      max-width: 100%;
-      width: max-content;
-      white-space: normal;
-      flex-wrap: wrap;
+    .hero-chips .row { display: contents; }
+    .hero-chips .sep { display: none; }
+    .hero-chips .row span:not(.sep) { white-space: nowrap; }
+    .hero-chips .row span:not(.sep)::after {
+      content: "/";
+      margin: 0 8px;
     }
-    .hero-chips .row:first-of-type {
-      top: auto;
-      border-radius: 16px 16px 16px 0;
-    }
-    .hero-chips .row:last-of-type {
-      top: auto;
-      border-radius: 0 16px 16px 16px;
-      margin-top: -16px;
+    .hero-chips .row:last-of-type span:not(.sep):last-child::after {
+      content: none;
+      margin: 0;
     }
   }
 
@@ -528,19 +528,13 @@
     .cases { gap: 52px; }
     .case-title { margin-top: 12px; }
     .concept-title { margin-top: 8px; }
-    .hero-chips .row {
+    .hero-chips {
       font-size: 14px;
       line-height: 22px;
-      padding: 10px 14px;
-      gap: 6px;
+      padding: 14px 14px;
+      border-radius: 12px;
     }
-    .hero-chips .row:first-of-type {
-      border-radius: 12px 12px 12px 0;
-    }
-    .hero-chips .row:last-of-type {
-      border-radius: 0 12px 12px 12px;
-      margin-top: -12px;
-    }
+    .hero-chips .row span:not(.sep)::after { margin: 0 6px; }
     .avatar-stack {
       transform: scale(0.7);
       transform-origin: top left;
@@ -768,6 +762,7 @@
       }
     });
   });
+
 </script>
 </body>
 </html>
