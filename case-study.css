@@ -338,6 +338,15 @@ body {
 }
 .sub-heading + .body-text { margin-top: 16px; }
 .case-hrm .sub-heading + .body-text { margin-top: 12px; }
+/* — Кейс «Оргструктура»: info-row уже и распределён по ширине (десктоп) — */
+@media (min-width: 901px) {
+  .departments .info-row.even {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .departments .info-row.even .info-col { flex: 0 1 320px; max-width: 320px; }
+}
 @media (min-width: 901px) {
   .case-hrm .cards-row { grid-template-columns: 1fr 1fr; }
 }

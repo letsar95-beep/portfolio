@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Оргструктура команд в&nbsp;личном кабинете партнёра — Самолет Плюс</title>
+<link rel="preload" href="./Fonts/TT%20Interphases%20Pro%20Trial%20Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./Fonts/TT%20Interphases%20Pro%20Trial%20Medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./case-study.css" />
+</head>
+<body class="departments">
+<div class="page">
+
+  <a class="close-btn" href="./index.html">✕</a>
+
+  <header class="case-header">
+    <h1>Оргструктура команд в&nbsp;личном кабинете партнёра</h1>
+    <p class="case-year">2024</p>
+    <div class="case-meta-row">
+      <span class="tag">Сценарии управления сотрудниками</span>
+      <span class="tag">B2B-продукт для&nbsp;партнёров</span>
+      <span class="tag">Дизайн в&nbsp;ограничениях</span>
+    </div>
+  </header>
+
+  <div class="hero" style="margin-top:50px;">
+    <img srcset="./images/департ/департ%200-800.webp 800w, ./images/департ/департ%200-1600.webp 1600w, ./images/департ/департ%200.webp 2209w" sizes="(min-width: 1101px) 1100px, 100vw" data-full="./images/департ/департ%200.webp" loading="lazy" decoding="async" src="./images/департ/департ%200.webp" alt="Оргструктура команд — общий вид раздела" />
+  </div>
+
+  <div class="info-row even">
+    <div class="info-col">
+      <strong>Моя роль:</strong>
+      собрала требования, учла фидбек пользователей и&nbsp;спроектировала новый функциональный раздел
+    </div>
+    <div class="info-col">
+      <strong>Результат:</strong>
+      раздел реализован, работа без жалоб в&nbsp;поддержку
+    </div>
+    <div class="info-col">
+      <strong>Команда:</strong>
+      продакт-менеджер, разработчики, аналитик, тестировщик
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <div class="cards-row">
+    <div class="card">
+      <p class="card-label">Проблема</p>
+      <p class="card-body">В&nbsp;офисах франшизы Самолет&nbsp;Плюс есть организационная структура групп продаж, которая не&nbsp;отображена в&nbsp;интерфейсе личного кабинета. Поступили запросы от&nbsp;владельцев крупных офисов о&nbsp;том, что&nbsp;структуру их&nbsp;команды приходится «держать в&nbsp;голове»&nbsp;— что&nbsp;мешает вести весь процесс управления онлайн.</p>
+    </div>
+    <div class="card">
+      <p class="card-label">Ограничения</p>
+      <p class="card-body">Отсутствие прямого контакта с&nbsp;пользователями&nbsp;— только информация от&nbsp;стейкхолдеров, которые общаются с&nbsp;партнёрами напрямую, и&nbsp;данные из&nbsp;поддержки.</p>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- Начало работы -->
+    <section class="section">
+      <h2>Начало работы</h2>
+      <p class="body-text">Продакт-менеджер пришёл с&nbsp;идеей добавить этот функционал в&nbsp;раздел «Моя команда», где&nbsp;уже содержался список сотрудников и&nbsp;доска найма, чтобы&nbsp;не&nbsp;перегружать основное меню разделов. Я&nbsp;видела, что&nbsp;для одного раздела информации слишком много и&nbsp;навигация на&nbsp;странице становится перегруженной&nbsp;— поэтому продемонстрировала разницу на&nbsp;прототипах и&nbsp;убедила продакта, что&nbsp;лучше вынести найм в&nbsp;отдельный раздел меню, чем&nbsp;жертвовать удобством и&nbsp;доступностью нового функционала, в&nbsp;котором у&nbsp;пользователей есть потребность.</p>
+    </section>
+
+    <!-- Процесс -->
+    <section class="section">
+      <h2>Процесс</h2>
+      <p class="body-text">Я&nbsp;уточнила у&nbsp;стейкхолдеров особенности текущей организации и&nbsp;наполняемость групп&nbsp;— отсюда появилась простая структура с&nbsp;минимумом информации в&nbsp;карточках.</p>
+
+      <p class="sub-heading" style="font-size:18px;">Гипотеза</p>
+      <p class="body-text">Если предоставить фамилии руководителей и&nbsp;фото сотрудников в&nbsp;карточках групп, руководитель затратит меньше времени, чтобы&nbsp;понять, с&nbsp;какой группой ему нужно работать в&nbsp;интерфейсе.</p>
+
+      <p class="body-text" style="margin-top:40px;">Тогда&nbsp;же выяснились возможные корнер-кейсы: группы объединяются в&nbsp;департаменты, но&nbsp;не&nbsp;все, иногда группы остаются без руководителей. Агенты могут быть переведены из&nbsp;одной группы в&nbsp;другую&nbsp;— этот сценарий я&nbsp;отдельно обработала в&nbsp;интерфейсе, чтобы&nbsp;изменения были очевидны. Самым сложным оказалось проектирование сценария добавления сотрудников&nbsp;— в&nbsp;больших офисах их&nbsp;может быть много, кто-то уже&nbsp;есть в&nbsp;других группах, руководитель помнит не&nbsp;всех. Для этого я&nbsp;разделила в&nbsp;окне добавления уже&nbsp;добавленных сотрудников, в&nbsp;самом удобном месте под рукой&nbsp;— сотрудники без групп, и&nbsp;уже в&nbsp;отдельной вкладке&nbsp;— сотрудники других групп. Это самый низкочастотный кейс, но&nbsp;важный&nbsp;— поэтому добавление сотрудника из&nbsp;другой группы должно было сохраняться.</p>
+    </section>
+
+    <!-- Техническое ревью -->
+    <section class="section">
+      <h2>Техническое ревью</h2>
+      <p class="body-text">Я&nbsp;набросала прототипы основных экранов и&nbsp;провела техревью с&nbsp;разработчиками&nbsp;— чтобы&nbsp;убедиться, что&nbsp;проблем с&nbsp;реализацией нового функционала не&nbsp;будет. После этого проработала основные флоу, корнер-кейсы, состояния и&nbsp;события.</p>
+    </section>
+
+    <!-- Реализация -->
+    <section class="section">
+      <h2>Реализация</h2>
+
+      <div class="gallery full">
+        <div class="media"><img srcset="./images/департ/департ%201-800.webp 800w, ./images/департ/департ%201-1600.webp 1600w, ./images/департ/департ%201.webp 2209w" sizes="(min-width: 1101px) 1100px, 100vw" data-full="./images/департ/департ%201.webp" loading="lazy" decoding="async" src="./images/департ/департ%201.webp" alt="Оргструктура команд — экран 1" /></div>
+      </div>
+      <div class="gallery full">
+        <div class="media"><img srcset="./images/департ/департ%202-800.webp 800w, ./images/департ/департ%202-1600.webp 1600w, ./images/департ/департ%202.webp 2209w" sizes="(min-width: 1101px) 1100px, 100vw" data-full="./images/департ/департ%202.webp" loading="lazy" decoding="async" src="./images/департ/департ%202.webp" alt="Оргструктура команд — экран 2" /></div>
+      </div>
+      <div class="gallery full">
+        <div class="media"><img srcset="./images/департ/департ%203-800.webp 800w, ./images/департ/департ%203-1600.webp 1600w, ./images/департ/департ%203.webp 2407w" sizes="(min-width: 1101px) 1100px, 100vw" data-full="./images/департ/департ%203.webp" loading="lazy" decoding="async" src="./images/департ/департ%203.webp" alt="Оргструктура команд — экран 3" /></div>
+      </div>
+      <div class="gallery full">
+        <div class="media"><img srcset="./images/департ/департ%204-800.webp 800w, ./images/департ/департ%204-1600.webp 1600w, ./images/департ/департ%204.webp 2407w" sizes="(min-width: 1101px) 1100px, 100vw" data-full="./images/департ/департ%204.webp" loading="lazy" decoding="async" src="./images/департ/департ%204.webp" alt="Оргструктура команд — добавление сотрудников" /></div>
+      </div>
+      <div class="gallery full">
+        <div class="media"><img srcset="./images/департ/департ%205-800.webp 800w, ./images/департ/департ%205-1600.webp 1600w, ./images/департ/департ%205.webp 2407w" sizes="(min-width: 1101px) 1100px, 100vw" data-full="./images/департ/департ%205.webp" loading="lazy" decoding="async" src="./images/департ/департ%205.webp" alt="Оргструктура команд — экран 5" /></div>
+      </div>
+    </section>
+
+    <!-- Проверка -->
+    <section class="section">
+      <h2>Проверка</h2>
+      <p class="body-text">Я&nbsp;провела коридорные тестирования на&nbsp;коллегах, чтобы&nbsp;убедиться, что&nbsp;основные флоу работы со&nbsp;структурой отделов интуитивно понятны и&nbsp;очевидны.</p>
+      <p class="body-text">После этого подготовила необходимые спецификации и&nbsp;передала макеты в&nbsp;разработку.</p>
+    </section>
+
+    <!-- Результат -->
+    <section class="section">
+      <h2>Результат</h2>
+      <p class="body-text">Новый раздел был реализован на&nbsp;проде. Измеряли отсутствием жалоб и&nbsp;вопросов в&nbsp;поддержку после введения нового функционала. Вопросы были единичными.</p>
+      <p class="body-text">Это одна из&nbsp;доработок личного кабинета в&nbsp;рамках повышения CSAT. Совместно с&nbsp;другими доработками показатель повысился на&nbsp;30% за&nbsp;полгода.</p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <nav class="nav">
+      <a href="https://docs.google.com/document/d/1Eou1gkPrmJTdE23vOFdSpqnvwB2rG64t1Jepd-kIpm8/edit?usp=sharing" target="_blank" rel="noopener">CV</a>
+      <a href="https://www.linkedin.com/in/valeriya-tsarkova-3042b2389/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=letsar95@gmail.com" target="_blank" rel="noopener">E-mail</a>
+      <a href="https://t.me/Valerie_tsar" target="_blank" rel="noopener">Telegram</a>
+      <span class="phone">+7&nbsp;909&nbsp;701&nbsp;84&nbsp;11</span>
+    </nav>
+  </footer>
+
+</div>
+<script src="./case-study.js"></script>
+</body>
+</html>
